@@ -60,6 +60,15 @@ html, body {
     }
 }
 
+@keyframes slide {
+    0%{
+        transform: translateX(-80vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
 .no_hover {
     pointer-events: none;
 }
@@ -72,5 +81,10 @@ html, body {
 
 .lowerBook {
     animation: lower 2s ease;
+    animation-fill-mode: forwards;
+}
+
+.slide {
+    animation: slide 2s ease;
     animation-fill-mode: forwards;
 }

@@ -47,12 +47,30 @@ function lowerBook (book) {
     })
 }
 
+function slideBook (book) {
+    let closeBook = document.createElement('div');
+    closeBook.style.width = '70vw';
+    closeBook.style.height = '85vw';
+    closeBook.style.position = 'absolute';
+    closeBook.style.zIndex = '5'
+    closeBook.style.backgroundColor = 'brown'
+    closeBook.classList.add('slide');
+
+    function append () {
+        container.appendChild(closeBook)
+    }
+
+    setTimeout(append, 1500)
+    //container.appendChild(closeBook);
+}
+
 
 function chooseBook(book) {
     book.addEventListener('click', function(book){
         this.classList.add('no_hover')
         this.style.animation = 'select 5s ease';
         this.style.animationFillMode = 'forwards';
+        slideBook(book)
     })
 }
 
